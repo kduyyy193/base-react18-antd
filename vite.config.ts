@@ -10,7 +10,9 @@ export default defineConfig({
       assets: '/src/assets',
       components: '/src/components',
       utils: '/src/utils',
-      '/src/main.tsx': '/src/index.tsx',
+      hooks: '/src/hooks',
+      services: '/src/services',
+      constants: '/src/constants',
     },
   },
 });

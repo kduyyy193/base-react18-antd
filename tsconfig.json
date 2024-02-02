@@ -10,6 +10,10 @@
       "components/*": ["src/components/*"],
       "utils/*": ["src/utils/*"],
       "assets/*": ["src/assets/*"],
+      "hooks/*": ["src/hooks/*"],
+      "services/*": ["src/services/*"],
+      "constants/*": ["src/constants/*"],
+      "common/*": ["src/common/*"],
       // Add more paths as needed
     },
     /* Bundler mode */
