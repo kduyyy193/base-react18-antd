@@ -11,7 +11,6 @@ const Login = () => {
     const { username, password } = values;
     if (username && password) {
       const data = await UserService.login({ username, password });
-      console.log(data);
       setToken(data?.token);
       setUser(data);
     }
