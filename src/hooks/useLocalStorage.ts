@@ -1,4 +1,3 @@
-import { errorMonitor } from 'events';
 import { useState } from 'react';
 
 const useLocalStorage = (keyName: string, defaultValue?: any) => {
@@ -22,7 +21,7 @@ const useLocalStorage = (keyName: string, defaultValue?: any) => {
     try {
       window.localStorage.setItem(keyName, JSON.stringify(newValue));
     } catch (err) {
-      console.log(errorMonitor);
+      console.log(err);
     }
     setStoredValue(newValue);
   };

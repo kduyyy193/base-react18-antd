@@ -22,13 +22,13 @@ const Table = ({
   const handleChange = (pagination: any, filters: any, sorter: any, extra: any) => {
     switch (extra?.action) {
       case 'paginate':
-        onChangePagination && onChangePagination(pagination);
+        onChangePagination(pagination);
         break;
       case 'sort':
-        onChangeSorter && onChangeSorter(sorter);
+        onChangeSorter(sorter);
         break;
       default:
-        onChangeFilter && onChangeFilter(filters);
+        onChangeFilter(filters);
         break;
     }
   };

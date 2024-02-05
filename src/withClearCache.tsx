@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { timeBuild } from './constants';
+import { TIME_BUILD } from './constants';
 
 type MetaData = {
   buildDate: number;
@@ -15,11 +15,11 @@ const withClearCache = (Component: any) => {
           .then((response) => response.json() as Promise<MetaData>)
           .then((meta: MetaData) => {
             const latestVersionDate = meta.buildDate;
-            let currentVersionDate = localStorage.getItem(timeBuild) || 0;
+            let currentVersionDate = localStorage.getItem(TIME_BUILD) || 0;
             currentVersionDate = parseInt(currentVersionDate as string);
             if (!currentVersionDate || latestVersionDate > currentVersionDate) {
               localStorage.clear();
-              localStorage.setItem(timeBuild, new Date().getTime().toString());
+              localStorage.setItem(TIME_BUILD, new Date().getTime().toString());
               refreshCacheAndReload();
             }
           });
