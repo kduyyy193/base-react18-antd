@@ -1,5 +1,15 @@
 {
+  "titles": {
+    "Login": "Login",
+    "Dashboard": "Dashboard",
+    "Notfound": "Notfound",
+    "User": "User"
+  },
   "auth": {
     "Login": "Login1"
+  },
+  "form": {
+    "Username": "Username",
+    "Password": "Password"
   }
 }

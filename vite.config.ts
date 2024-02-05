@@ -1,20 +1,11 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import reactRefresh from '@vitejs/plugin-react-refresh';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      '@': '/src',
-      utils: '/src/utils',
-      hooks: '/src/hooks',
-      assets: '/src/assets',
-      i18n: '/src/i18n',
-      commnon: '/src/commnon',
-      services: '/src/services',
-      constants: '/src/constants',
-      components: '/src/components',
-    },
+  plugins: [reactRefresh(), tsconfigPaths()],
+  server: {
+    port: 3335,
   },
 });

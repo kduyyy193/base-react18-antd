@@ -1,0 +1,94 @@
+@import '../../../node_modules/line-awesome/dist/line-awesome/css/line-awesome.css';
+@import './reset.less';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.ant-btn {
+  @apply border border-gray-300 text-sm rounded-lg mr-2 px-2;
+
+  &.ant-btn-primary {
+    @apply bg-blue-500 text-white;
+  }
+}
+
+.ant-picker-panel-container .ant-picker-panels {
+  @apply overflow-auto~'max-w-[560px] w-[90vw]';
+}
+
+.ant-dropdown-menu {
+  @apply w-fit rounded-lg;
+}
+
+.detail-profile {
+  .ant-collapse-header {
+    @apply bg-blue-500 text-yellow-500 font-bold text-lg rounded-lg !important;
+
+    .ant-collapse-arrow {
+      @apply text-lg !important;
+    }
+  }
+}
+
+.ant-table-container {
+  min-height: 630px !important;
+}
+
+.ant-descriptions-bordered {
+  table,
+  th,
+  td {
+    @apply border border-gray-400 border-collapse;
+  }
+
+  table {
+    @apply w-full;
+  }
+
+  th,
+  td {
+    @apply px-3 py-1;
+  }
+
+  th {
+    @apply bg-gray-100;
+    width: 165px;
+  }
+}
+
+tr {
+  height: 62px !important;
+}
+
+.ant-table-measure-row {
+  height: 0 !important;
+}
+
+.ant-table-cell-scrollbar:not([rowspan]) {
+  box-shadow: none;
+}
+
+.ant-table .ant-table-thead > tr > th {
+  font-size: 1rem;
+}
+
+.ant-table .ant-table-tbody > tr.ant-table-row > td {
+  font-size: 0.9rem;
+}

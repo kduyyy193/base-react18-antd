@@ -1,5 +1,15 @@
 {
+  "titles": {
+    "Login": "Đăng nhập",
+    "Dashboard": "Bảng thông tin",
+    "Notfound": "Không tìm thấy",
+    "User": "Người dùng"
+  },
   "auth": {
     "Login": "Đăng nhập"
+  },
+  "form": {
+    "Username": "Tên đăng nhập",
+    "Password": "Mật khẩu"
   }
 }

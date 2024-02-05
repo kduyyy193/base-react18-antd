@@ -1,0 +1,83 @@
+.menu {
+  li {
+    @apply cursor-pointer;
+  }
+
+  .ant-collapse-header {
+    @apply flex-row-reverse py-1 items-center justify-between !important;
+  }
+
+  .child-item {
+    @apply pl-9 flex items-center before:w-2 hover:before:w-4;
+
+    &:before {
+      @apply rounded bg-blue-500 transition-all duration-300 ease-in-out;
+    }
+  }
+}
+
+header {
+  .ant-select:not(.ant-select-customize-input) {
+    .ant-select-selector {
+      @apply bg-blue-500 border-blue-500 text-white rounded-full;
+    }
+
+    .ant-select-arrow {
+      @apply text-white;
+    }
+  }
+}
+
+.hamburger {
+  @apply inline-block right-5 absolute transition-all duration-300 ease-in-out z-10 cursor-pointer w-7;
+
+  @media (max-width: 767px) {
+    @apply -right-7;
+  }
+
+  &.is-active {
+    @apply -right-12;
+
+    @media (max-width: 767px) {
+      @apply -right-4;
+    }
+
+    .line {
+      @apply bg-blue-500;
+    }
+
+    .line:nth-child(1),
+    .line:nth-child(3) {
+      @apply h-1~"w-3.5";
+    }
+
+    .line:nth-child(2) {
+      @apply transform translate-x-0 h-1 w-7;
+    }
+
+    .line:nth-child(1) {
+      @apply translate-y-1~"translate-x-3.5" rotate-45;
+    }
+
+    .line:nth-child(3) {
+      @apply -translate-y-1~"translate-x-3.5" -rotate-45;
+    }
+  }
+
+  .line {
+    @apply bg-gray-500 block transition-all duration-300 ease-in-out rounded-sm h-1~"my-1.5";
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      @apply w-7;
+    }
+
+    &:nth-child(3) {
+      @apply ~"w-3.5";
+    }
+  }
+
+  &:hover .line {
+    @apply w-7;
+  }
+}

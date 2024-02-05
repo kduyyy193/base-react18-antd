@@ -1,0 +1,136 @@
+.ant-input {
+  @apply border-gray-300 !py-2 !rounded-lg;
+
+  &:focus {
+    @apply border-blue-500 shadow shadow-blue-500/30 outline-0;
+  }
+}
+
+.ant-input-password,
+.ant-input:focus {
+  background: #e8f0fe !important;
+}
+
+.ant-input-affix-wrapper {
+  padding: 0 12px !important;
+}
+
+.ant-select {
+  &:not(.ant-select-customize-input) .ant-select-selector {
+    @apply rounded-xl border px-4 border-solid border-gray-300~'py-1.5 min-h-[2.5rem]' items-center h-10;
+  }
+
+  &-focused:not(.ant-select-disabled).ant-select:not(.ant-select-customize-input)
+    .ant-select-selector {
+    @apply border-blue-300;
+  }
+
+  &-single {
+    &.ant-select-show-arrow .ant-select-selection-item {
+      @apply pr-4 h-7;
+    }
+
+    &:not(.ant-select-customize-input) .ant-select-selector .ant-select-selection-search-input {
+      @apply h-9;
+    }
+  }
+
+  &-clear .anticon {
+    @apply relative~'-top-0.5';
+  }
+
+  &-multiple .ant-select-selection-item {
+    @apply bg-blue-100 rounded-xl py-1 px-2 my-0 -ml-1~'min-h-[1.88rem]';
+  }
+}
+
+.ant-form {
+  input[type='file'] {
+    @apply hidden;
+  }
+
+  .ant-form-item {
+    @apply mb-4;
+
+    &-label {
+      @apply overflow-visible pr-2;
+
+      > label {
+        @apply font-bold text-blue-950;
+
+        &.ant-form-item-required:not(.ant-form-item-required-mark-optional) {
+          &::before {
+            content: none;
+          }
+
+          &::after {
+            content: ' *' !important;
+            @apply contents text-red-500 visible;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-checkbox-inner,
+  .ant-checkbox-checked:after {
+    @apply w-5 h-5 rounded border-2;
+  }
+
+  .ant-checkbox {
+    @apply top-1;
+  }
+
+  .table .ant-form-item {
+    @apply mb-0;
+
+    .ant-input,
+    .ant-picker,
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      @apply border-0 rounded-none;
+    }
+  }
+}
+
+.ant-picker {
+  @apply rounded-xl border px-4 border-solid border-gray-300 h-10 items-center w-full;
+}
+
+.ant-picker-input > input {
+  @apply flex items-center justify-center text-center;
+}
+
+.btn {
+  margin: 20px auto;
+  border: none;
+  padding: 10px 44px;
+  font-size: 36px;
+  position: relative;
+  border-radius: 8px;
+
+  &::before {
+    @apply bg-blue-400;
+    transition: all 0.85s ease-in-out;
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+  }
+
+  & .btn-text {
+    color: white;
+    position: relative;
+    z-index: 10;
+  }
+
+  &:hover {
+    &::before {
+      @apply bg-blue-400;
+      border-radius: 8px;
+      width: 100%;
+    }
+  }
+}

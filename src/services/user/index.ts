@@ -3,7 +3,7 @@ import { TUser } from 'common/interface';
 
 const UserService = {
   nameApi: 'User',
-  signin: async ({ username, password }: TUser) => {
+  login: async ({ username, password }: TUser) => {
     try {
       const { data } = await axiosInstance.post('/login', {
         username,

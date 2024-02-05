@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import 'assets/styles/index.css';
+import 'assets/styles/index.less';
 
 type ComponentProps = {
   children: ReactNode;

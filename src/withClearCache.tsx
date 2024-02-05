@@ -5,12 +5,8 @@ type MetaData = {
   buildDate: number;
 };
 
-interface ComponentProps {}
-
-const withClearCache = <T extends ComponentProps>(
-  Component: React.ComponentType<T>
-): React.FC<T> => {
-  return function ClearCacheComponent(props: T) {
+const withClearCache = (Component: any) => {
+  return function ClearCacheComponent(props: any) {
     const componentMounted = useRef(false);
 
     useEffect(() => {
