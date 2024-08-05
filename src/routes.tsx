@@ -1,9 +1,13 @@
-import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Login, Notfound, Dashboard, User } from "pages";
-import { DefaultLayout, GuestLayout } from "layouts";
-import { ContextProvider, useStateContext } from "contexts/ContextProvider";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ContextProvider, useStateContext } from "contexts/ContextProvider";
+import DefaultLayout from "layouts/DefaultLayout";
+import GuestLayout from "layouts/GuestLayout";
+import Dashboard from "pages/dashboard";
+import Login from "pages/login";
+import Notfound from "pages/not-found";
+import User from "pages/user";
 
 type ProtectedRouteProps = {
   element: React.ReactNode;
