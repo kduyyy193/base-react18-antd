@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 import us from "assets/svg/us.svg";
 import vn from "assets/svg/vn.svg";
 import avatar from "assets/images/avatar.jpeg";
-import { Avatar } from "components";
+import Avatar from "components/Avatar";
 
 const Header = ({ isCollapsed, isDesktop }: { isCollapsed: boolean; isDesktop: boolean }) => {
   const { user, logout, changeLanguage } = useStateContext();

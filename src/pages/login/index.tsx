@@ -1,8 +1,9 @@
 import { Form as FormAnt, Input } from "antd";
 import { Store } from "antd/lib/form/interface";
-import { Form, ItemForm } from "components";
+import Form, { ItemForm } from "components/Form";
 import { useStateContext } from "contexts/ContextProvider";
-import { UserService } from "services";
+import UserService from "services/user";
+
 const Login = () => {
   const [form] = FormAnt.useForm();
   const { setToken, setUser } = useStateContext();
