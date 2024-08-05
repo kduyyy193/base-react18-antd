@@ -6,7 +6,11 @@ import withClearCache from "./withClearCache";
 import RouterProviderInstance from "routes";
 import reportWebVitals from "reportWebVitals";
 
-const Styling = lazy(() => import("./styling"));
+const Styling = lazy(() =>
+  import("./styling").catch((error) => {
+    throw error;
+  })
+);
 
 const ClearCacheComponent = withClearCache(RouterProviderInstance);
 
