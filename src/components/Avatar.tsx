@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { getFirstLetter } from "utils";
+import getFirstLetter from "utils/getFirstLetter";
 
 type AvatarProps = {
   onClick?: () => void;
