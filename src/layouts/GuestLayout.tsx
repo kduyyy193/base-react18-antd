@@ -1,21 +1,21 @@
-import { Navigate, Outlet } from 'react-router-dom';
-import { useStateContext } from 'contexts/ContextProvider';
-import { useTranslation } from 'react-i18next';
-import logo from 'assets/svg/logo.svg';
+import { Navigate, Outlet } from "react-router-dom";
+import { useStateContext } from "contexts/ContextProvider";
+import { useTranslation } from "react-i18next";
+import logo from "assets/svg/logo.svg";
 
 const GuestLayout = () => {
   const { token, changeLanguage } = useStateContext();
   const { i18n } = useTranslation();
 
   if (token) {
-    return <Navigate to={'/'} />;
+    return <Navigate to={"/"} />;
   }
 
-  if (['en', 'vi'].indexOf(i18n.language) === -1) {
-    if (i18n.language === 'vi-VN') {
-      changeLanguage('vi');
+  if (["en", "vi"].indexOf(i18n.language) === -1) {
+    if (i18n.language === "vi-VN") {
+      changeLanguage("vi");
     } else {
-      changeLanguage('en');
+      changeLanguage("en");
     }
   }
 

@@ -1,8 +1,8 @@
-import { Form as FormAnt, Input } from 'antd';
-import { Store } from 'antd/lib/form/interface';
-import { Form, ItemForm } from 'components';
-import { useStateContext } from 'contexts/ContextProvider';
-import { UserService } from 'services';
+import { Form as FormAnt, Input } from "antd";
+import { Store } from "antd/lib/form/interface";
+import { Form, ItemForm } from "components";
+import { useStateContext } from "contexts/ContextProvider";
+import { UserService } from "services";
 const Login = () => {
   const [form] = FormAnt.useForm();
   const { setToken, setUser } = useStateContext();
@@ -18,15 +18,15 @@ const Login = () => {
 
   const formItems: ItemForm[] = [
     {
-      name: 'username',
-      label: 'Username',
-      rules: [{ required: true, message: 'Please input your username!' }],
+      name: "username",
+      label: "Username",
+      rules: [{ required: true, message: "Please input your username!" }],
       field: <Input />,
     },
     {
-      name: 'password',
-      label: 'Password',
-      rules: [{ required: true, message: 'Please input your password!' }],
+      name: "password",
+      label: "Password",
+      rules: [{ required: true, message: "Please input your password!" }],
       field: <Input.Password />,
     },
   ];

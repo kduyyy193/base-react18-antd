@@ -1,11 +1,11 @@
-import { Table as TableAnt } from 'antd';
-import { FilterValue } from 'antd/es/table/interface';
-import { TablePaginationConfig, TableProps } from 'antd/lib';
-import { SorterResult } from 'antd/lib/table/interface';
+import { Table as TableAnt } from "antd";
+import { FilterValue, TableCurrentDataSource } from "antd/es/table/interface";
+import { TablePaginationConfig, TableProps } from "antd/lib";
+import { SorterResult } from "antd/lib/table/interface";
 
 type TypeTableProps = TableProps & {
   onChangePagination: (pagination: TablePaginationConfig) => void;
-  onChangeSorter: (sorter: SorterResult<MutationRecordType>) => void;
+  onChangeSorter: (sorter: SorterResult<any> | SorterResult<any>[]) => void;
   onChangeFilter: (filters: Record<string, FilterValue | null>) => void;
   totalsItem: number;
 };
@@ -19,12 +19,17 @@ const Table = ({
   totalsItem,
   ...props
 }: TypeTableProps) => {
-  const handleChange = (pagination: any, filters: any, sorter: any, extra: any) => {
+  const handleChange = (
+    pagination: TablePaginationConfig,
+    filters: Record<string, FilterValue | null>,
+    sorter: SorterResult<any> | SorterResult<any>[],
+    extra: TableCurrentDataSource<any>
+  ): void => {
     switch (extra?.action) {
-      case 'paginate':
+      case "paginate":
         onChangePagination(pagination);
         break;
-      case 'sort':
+      case "sort":
         onChangeSorter(sorter);
         break;
       default:

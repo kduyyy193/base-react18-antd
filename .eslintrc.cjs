@@ -1,21 +1,42 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2021: true,
+    jest: true,
+  },
   extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:react-hooks/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
-  parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'],
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: [".eslintrc.{js,cjs}"],
+      parserOptions: {
+        sourceType: "script",
+      },
+    },
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint", "react"],
   rules: {
-    'react/prop-types': 0,
-    'no-underscore-dangle': 0,
-    camelcase: 'off',
-    'no-new': 'off',
-    'react-hooks/exhaustive-deps': 'off',
-    'react-hooks/rules-of-hooks': 'error',
-    '@typescript-eslint/no-explicit-any': 'off',
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "prettier/prettier": "error",
+    quotes: ["error", "double"],
+    semi: ["error", "always"],
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
 };

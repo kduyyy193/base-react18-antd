@@ -1,9 +1,9 @@
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Login, Notfound, Dashboard, User } from 'pages';
-import { DefaultLayout, GuestLayout } from 'layouts';
-import { ContextProvider, useStateContext } from 'contexts/ContextProvider';
-import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Login, Notfound, Dashboard, User } from "pages";
+import { DefaultLayout, GuestLayout } from "layouts";
+import { ContextProvider, useStateContext } from "contexts/ContextProvider";
+import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 type ProtectedRouteProps = {
   element: React.ReactNode;
@@ -14,7 +14,7 @@ const RouteElement = ({ element, title }: ProtectedRouteProps) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    document.title = t('titles.' + title || '');
+    document.title = t("titles." + title || "");
   });
 
   return element;
@@ -32,35 +32,35 @@ const ProtectedRoute = ({ element, title }: ProtectedRouteProps) => {
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <ProtectedRoute title="Dashboard" element={<DefaultLayout />} />,
     children: [
       {
-        path: '/',
-        element: <ProtectedRoute title="Dashboard" element={<Navigate to={'/dashboard'} />} />,
+        path: "/",
+        element: <ProtectedRoute title="Dashboard" element={<Navigate to={"/dashboard"} />} />,
       },
       {
-        path: '/dashboard',
+        path: "/dashboard",
         element: <ProtectedRoute title="Dashboard" element={<Dashboard />} />,
       },
       {
-        path: '/user',
+        path: "/user",
         element: <ProtectedRoute title="User" element={<User />} />,
       },
     ],
   },
   {
-    path: '/',
+    path: "/",
     element: <GuestLayout />,
     children: [
       {
-        path: '/login',
+        path: "/login",
         element: <RouteElement element={<Login />} title="Login" />,
       },
     ],
   },
   {
-    path: '*',
+    path: "*",
     element: <RouteElement element={<Notfound />} title="Notfound" />,
   },
 ]);

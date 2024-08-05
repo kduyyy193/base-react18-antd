@@ -1,3 +1,3 @@
-import getFirstLetter from './getFirstLetter';
+import getFirstLetter from "./getFirstLetter";
 
 export { getFirstLetter };

@@ -1,17 +1,17 @@
-import { useEffect, useRef } from 'react';
-import { TIME_BUILD } from './constants';
+import { ComponentType, useEffect, useRef } from "react";
+import { TIME_BUILD } from "./constants";
 
 type MetaData = {
   buildDate: number;
 };
 
-const withClearCache = (Component: any) => {
-  return function ClearCacheComponent(props: any) {
+const withClearCache = (Component: ComponentType) => {
+  return function ClearCacheComponent(props: object) {
     const componentMounted = useRef(false);
 
     useEffect(() => {
       if (!componentMounted.current) {
-        fetch('/meta.json', { cache: 'no-cache' })
+        fetch("/meta.json", { cache: "no-cache" })
           .then((response) => response.json() as Promise<MetaData>)
           .then((meta: MetaData) => {
             const latestVersionDate = meta.buildDate;
@@ -35,7 +35,6 @@ const withClearCache = (Component: any) => {
           }
         });
       }
-      window.location.reload();
     };
 
     return <Component {...props} />;

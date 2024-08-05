@@ -1,15 +1,15 @@
-import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import axios from 'axios';
-import * as dayjs from 'dayjs';
-import { ConfigProvider } from 'antd';
-import { Locale } from 'antd/es/locale';
-import viVN from 'antd/lib/locale/vi_VN';
-import enUS from 'antd/lib/locale/en_US';
+import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import axios from "axios";
+import * as dayjs from "dayjs";
+import { ConfigProvider } from "antd";
+import { Locale } from "antd/es/locale";
+import viVN from "antd/lib/locale/vi_VN";
+import enUS from "antd/lib/locale/en_US";
 
-import { TUser } from 'common/interface';
-import { KEY_TOKEN } from 'services/config';
-import { KEY_USER } from '../constants';
+import { TUser } from "common/interface";
+import { KEY_TOKEN } from "services/config";
+import { KEY_USER } from "../constants";
 
 type IContextProps = {
   user: TUser;
@@ -67,7 +67,7 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
 
   const changeLanguage = useCallback(
     (values: string | null) => {
-      const isReload = localStorage.getItem('i18nextLng') !== values;
+      const isReload = localStorage.getItem("i18nextLng") !== values;
       if (values) {
         i18n.changeLanguage(values);
         dayjs.locale(values);
@@ -75,11 +75,11 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
       if (isReload) {
         location.reload();
       }
-      axios.defaults.headers.common['X-localization'] = values;
-      if (values === 'vi') {
+      axios.defaults.headers.common["X-localization"] = values;
+      if (values === "vi") {
         setLocale(viVN);
       }
-      if (values === 'en') {
+      if (values === "en") {
         setLocale(enUS);
       }
     },
@@ -87,8 +87,8 @@ export const ContextProvider = ({ children }: ContextProviderProps) => {
   );
 
   useEffect(() => {
-    if (localStorage.getItem('i18nextLng')) {
-      changeLanguage(localStorage.getItem('i18nextLng'));
+    if (localStorage.getItem("i18nextLng")) {
+      changeLanguage(localStorage.getItem("i18nextLng"));
     }
   }, [changeLanguage]);
 

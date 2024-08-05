@@ -1,11 +1,11 @@
-import axios from 'axios';
-import queryString from 'qs';
-import { API_BASE_URL, KEY_TOKEN } from './config';
+import axios from "axios";
+import queryString from "qs";
+import { API_BASE_URL, KEY_TOKEN } from "./config";
 
 const axiosClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    'content-type': 'application/json',
+    "content-type": "application/json",
   },
   paramsSerializer: (params) => queryString.stringify(params, { encode: true }),
 });

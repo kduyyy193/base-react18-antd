@@ -1,11 +1,11 @@
-import axiosInstance from '../axios-client';
-import { TUser } from 'common/interface';
+import axiosInstance from "../axios-client";
+import { TUser } from "common/interface";
 
 const UserService = {
-  nameApi: 'User',
+  nameApi: "User",
   login: async ({ username, password }: TUser) => {
     try {
-      const { data } = await axiosInstance.post('/login', {
+      const { data } = await axiosInstance.post("/login", {
         username,
         password,
       });
@@ -16,7 +16,7 @@ const UserService = {
   },
   logout: async () => {
     try {
-      const { data } = await axiosInstance.post('/logout');
+      const { data } = await axiosInstance.post("/logout");
       return data;
     } catch (error) {
       return error;

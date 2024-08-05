@@ -1,5 +1,5 @@
-import classNames from 'classnames';
-import { getFirstLetter } from 'utils';
+import classNames from "classnames";
+import { getFirstLetter } from "utils";
 
 type AvatarProps = {
   onClick?: () => void;
@@ -11,11 +11,11 @@ type AvatarProps = {
 };
 
 const Avatar = ({ onClick, text, src, showName, size, index = 0 }: AvatarProps) => (
-  <div onClick={onClick} className={classNames({ 'flex items-center': showName })}>
-    {!text || (src && src.indexOf('/defaultAvatar.png') === -1) ? (
-      <div className={classNames({ '-ml-2': index > 0 })}>
+  <div onClick={onClick} className={classNames({ "flex items-center": showName })}>
+    {!text || (src && src.indexOf("/defaultAvatar.png") === -1) ? (
+      <div className={classNames({ "-ml-2": index > 0 })}>
         <img
-          className={classNames('rounded-xl object-cover object-center', 'h-' + size, 'w-' + size)}
+          className={classNames("rounded-xl object-cover object-center", "h-" + size, "w-" + size)}
           src={src}
           alt="Avatar"
         />
@@ -23,12 +23,12 @@ const Avatar = ({ onClick, text, src, showName, size, index = 0 }: AvatarProps) 
     ) : (
       <div
         className={classNames(
-          'rounded-xl inline-block text-center',
-          'w-' + size,
-          'h-' + size,
-          'leading-' + size,
+          "rounded-xl inline-block text-center",
+          "w-" + size,
+          "h-" + size,
+          "leading-" + size,
           {
-            '-ml-2': index > 0,
+            "-ml-2": index > 0,
           }
         )}
       >
@@ -36,7 +36,7 @@ const Avatar = ({ onClick, text, src, showName, size, index = 0 }: AvatarProps) 
       </div>
     )}
     {!!showName && !!text && (
-      <span className={classNames('ml-1', { 'link-click': !!onClick })}>{text}</span>
+      <span className={classNames("ml-1", { "link-click": !!onClick })}>{text}</span>
     )}
   </div>
 );

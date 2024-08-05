@@ -1,11 +1,11 @@
-import { Store } from 'antd/es/form/interface';
-import { useEffect } from 'react';
-import { FormInstance } from 'antd/lib';
-import { Form as FormAnt } from 'antd';
-import { FormItemProps } from 'antd/es/form';
+import { Store } from "antd/es/form/interface";
+import { useEffect } from "react";
+import { FormInstance } from "antd/lib";
+import { Form as FormAnt } from "antd";
+import { FormItemProps } from "antd/es/form";
 
-import './index.less';
-import Button from './Button';
+import "./index.less";
+import Button from "./Button";
 
 export type ItemForm = FormItemProps & {
   field: any;
