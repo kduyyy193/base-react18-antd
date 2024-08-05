@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "PORT=3335 vite",
+    "build:dev": "tsc && env-cmd -f .env vite build",
     "build": "tsc && node ./update-build.js && env-cmd -f .env vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",

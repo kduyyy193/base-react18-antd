@@ -1,5 +1,5 @@
 #!/bin/sh
-npm run build
+npm run build:dev
 if [ $? -ne 0 ]; then
   echo "Build failed. Push aborted."
   exit 1
