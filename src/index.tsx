@@ -16,9 +16,7 @@ const ClearCacheComponent = withClearCache(RouterProviderInstance);
 
 function App() {
   return (
-    <Suspense
-      fallback={<div className="w-screen h-screen flex place-items-center">Loading...</div>}
-    >
+    <Suspense fallback={<div>Loading...</div>}>
       <Styling>
         <ClearCacheComponent />
       </Styling>

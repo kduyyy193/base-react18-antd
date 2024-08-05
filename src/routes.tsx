@@ -42,7 +42,7 @@ const routes = [
     path: "/",
     element: <ProtectedRoute title="Dashboard" element={<DefaultLayout />} />,
     children: [
-      { path: "/", element: <Navigate to="/dashboard" replace /> },
+      { path: "", element: <Navigate to="/dashboard" replace /> },
       { path: "dashboard", element: <ProtectedRoute title="Dashboard" element={<Dashboard />} /> },
       { path: "user", element: <ProtectedRoute title="User" element={<User />} /> },
     ],
@@ -50,7 +50,7 @@ const routes = [
   {
     path: "/login",
     element: <GuestLayout />,
-    children: [{ path: "/", element: <RouteElement element={<Login />} title="Login" /> }],
+    children: [{ path: "", element: <RouteElement element={<Login />} title="Login" /> }],
   },
   { path: "*", element: <RouteElement element={<Notfound />} title="Notfound" /> },
 ];
@@ -59,9 +59,7 @@ const router = createBrowserRouter(routes);
 
 const RouterProviderInstance = () => (
   <ContextProvider>
-    <React.Suspense fallback={<div>Loading...</div>}>
-      <RouterProvider router={router} />
-    </React.Suspense>
+    <RouterProvider router={router} />
   </ContextProvider>
 );
 
